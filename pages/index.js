@@ -27,7 +27,8 @@ export default function Home() {
     <div className="flex items-center justify-center min-h-screen p-4">
       <div className="bg-white rounded-2xl shadow-lg p-8 max-w-md w-full">
         <h1 className="text-2xl font-bold text-center mb-6">BMI Calculator</h1>
-        
+
+        {/* Form */}
         <form onSubmit={calculateBMI} className="space-y-4">
           <div>
             <label className="block mb-1 font-medium">Height (cm)</label>
@@ -61,11 +62,12 @@ export default function Home() {
           </button>
         </form>
 
+        {/* Result */}
         {bmi && (
           <div className="mt-6 text-center">
             <p className="text-lg font-semibold">Your BMI: {bmi}</p>
             <p
-              className={\`mt-2 text-xl font-bold ${
+              className={`mt-2 text-xl font-bold ${
                 category === "Underweight"
                   ? "text-yellow-500"
                   : category === "Normal"
@@ -73,7 +75,7 @@ export default function Home() {
                   : category === "Overweight"
                   ? "text-orange-500"
                   : "text-red-600"
-              }\`}
+              }`}
             >
               {category}
             </p>
